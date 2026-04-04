@@ -1,0 +1,8 @@
+{
+  "name": "openclaw",
+  "description": "Claude Code plugin for OpenClaw development — provides skills, tools, and hooks for working with the OpenClaw monorepo",
+  "version": "1.0.0",
+  "author": {
+    "name": "OpenClaw Contributors"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "openclaw-dev": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-filesystem", "lib/openclaw/src", "lib/openclaw/extensions", "lib/openclaw/docs"],
+      "env": {}
+    }
+  }
+}
