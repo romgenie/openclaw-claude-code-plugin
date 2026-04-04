@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const{execSync}=require('child_process');const f=process.env.CLAUDE_FILE_PATH||'';if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:'lib/openclaw',stdio:'ignore'})}catch(e){}}\""
+            "command": "node -e \"const{execSync}=require('child_process');const fs=require('fs');const f=process.env.CLAUDE_FILE_PATH||'';const r='lib/openclaw';if(!fs.existsSync(r)){console.error('[openclaw plugin] Warning: monorepo not found at '+r+'. Set OPENCLAW_REPO_PATH or clone the monorepo.');process.exit(0)}if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:r,stdio:'ignore'})}catch(e){}}\""
           }
         ]
       }
