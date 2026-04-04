@@ -14,6 +14,7 @@ const child = spawn(
   npx,
   [
     "-y",
+    "--quiet",
     "@anthropic-ai/mcp-server-filesystem",
     pathModule.join(path, "src"),
     pathModule.join(path, "extensions"),
