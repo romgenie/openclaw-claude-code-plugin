@@ -48,6 +48,7 @@ my-plugin/
 
 **Tool plugin:**
 ```typescript
+import { Type } from "@sinclair/typebox";
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 
 export default definePluginEntry({
