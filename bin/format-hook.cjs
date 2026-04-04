@@ -5,9 +5,11 @@ const { path, found } = require("./detect-monorepo.cjs");
 
 if (!found) process.exit(0);
 
-const file = process.env.CLAUDE_FILE_PATH || "";
+const file = process.env.CLAUDE_FILE_PATH
+  ? pathModule.resolve(process.env.CLAUDE_FILE_PATH)
+  : "";
 
-if (file.endsWith(".ts") || file.endsWith(".tsx")) {
+if (file && (file.endsWith(".ts") || file.endsWith(".tsx"))) {
   const localBin = pathModule.join(path, "node_modules", ".bin", "oxfmt");
   const hasLocal = fs.existsSync(localBin) || fs.existsSync(localBin + ".cmd");
 

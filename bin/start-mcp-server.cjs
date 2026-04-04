@@ -9,17 +9,22 @@ if (!found) {
   process.exit(0);
 }
 
+const fs = require("fs");
+const dirs = ["src", "extensions", "docs"]
+  .map((d) => pathModule.join(path, d))
+  .filter((d) => fs.existsSync(d));
+
+if (dirs.length === 0) {
+  console.error(
+    `[openclaw] Monorepo at ${pathModule.resolve(path)} has no src/extensions/docs — MCP server disabled`
+  );
+  process.exit(0);
+}
+
 const npx = process.platform === "win32" ? "npx.cmd" : "npx";
 const child = spawn(
   npx,
-  [
-    "-y",
-    "--quiet",
-    "@anthropic-ai/mcp-server-filesystem",
-    pathModule.join(path, "src"),
-    pathModule.join(path, "extensions"),
-    pathModule.join(path, "docs"),
-  ],
+  ["-y", "--quiet", "@anthropic-ai/mcp-server-filesystem", ...dirs],
   { stdio: "inherit" }
 );
 
