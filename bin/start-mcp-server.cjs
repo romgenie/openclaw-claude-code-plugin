@@ -33,4 +33,7 @@ child.on("error", (err) => {
   process.exit(1);
 });
 
-child.on("close", (code) => process.exit(code || 0));
+child.on("close", (code) => {
+  if (code !== 0) console.error(`[openclaw] MCP server exited with code ${code}`);
+  process.exit(code || 0);
+});
