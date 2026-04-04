@@ -1,4 +1,5 @@
 const { spawn } = require("child_process");
+const pathModule = require("path");
 const { path, found } = require("./detect-monorepo");
 
 if (!found) {
@@ -16,9 +17,9 @@ const child = spawn(
   [
     "-y",
     "@anthropic-ai/mcp-server-filesystem",
-    path + "/src",
-    path + "/extensions",
-    path + "/docs",
+    pathModule.join(path, "src"),
+    pathModule.join(path, "extensions"),
+    pathModule.join(path, "docs"),
   ],
   { stdio: "inherit" }
 );
