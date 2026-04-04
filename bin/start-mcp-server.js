@@ -4,9 +4,7 @@ const { path, found } = require("./detect-monorepo");
 
 if (!found) {
   console.error(
-    "[openclaw] Monorepo not found at " +
-      path +
-      " — MCP server disabled (standalone mode)"
+    `[openclaw] Monorepo not found at ${path} — MCP server disabled (standalone mode)`
   );
   process.exit(0);
 }
@@ -23,5 +21,10 @@ const child = spawn(
   ],
   { stdio: "inherit" }
 );
+
+child.on("error", (err) => {
+  console.error(`[openclaw] Failed to start MCP server: ${err.message}`);
+  process.exit(1);
+});
 
 child.on("close", (code) => process.exit(code || 0));
