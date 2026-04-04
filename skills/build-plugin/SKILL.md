@@ -40,5 +40,8 @@ Scaffold or validate an OpenClaw plugin named `$ARGUMENTS.plugin_name`.
 
 ## Reference
 
-See `lib/openclaw/docs/plugins/building-plugins.md` for the full guide.
-See `lib/openclaw/extensions/` for 100+ examples of existing plugins.
+See `docs/sdk-reference.md` (bundled with this plugin) for SDK subpaths, types, and examples.
+
+If the OpenClaw monorepo is available (check for `lib/openclaw/package.json` or `OPENCLAW_REPO_PATH`):
+- See `<monorepo>/docs/plugins/building-plugins.md` for the full guide
+- See `<monorepo>/extensions/` for 100+ examples of existing plugins

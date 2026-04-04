@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "openclaw-dev": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-filesystem", "lib/openclaw/src", "lib/openclaw/extensions", "lib/openclaw/docs"],
+      "command": "node",
+      "args": ["-e", "const p=process.env.OPENCLAW_REPO_PATH||'lib/openclaw';const fs=require('fs');if(!fs.existsSync(p+'/package.json')){console.error('[openclaw] Monorepo not found at '+p+' — MCP server disabled (standalone mode)');process.exit(0)}const{spawn}=require('child_process');const c=spawn('npx',['-y','@anthropic-ai/mcp-server-filesystem',p+'/src',p+'/extensions',p+'/docs'],{stdio:'inherit',shell:true});c.on('close',code=>process.exit(code||0))"],
       "env": {}
     }
   }
