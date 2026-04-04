@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const{execSync}=require('child_process');const f=process.env.CLAUDE_FILE_PATH||'';if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:'lib/openclaw',stdio:'ignore'})}catch(e){}}\""
+            "command": "node -e \"const{execSync}=require('child_process');const f=process.env.CLAUDE_FILE_PATH||'';if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --version',{cwd:'lib/openclaw',stdio:'ignore'})}catch(e){console.error('[openclaw plugin] oxfmt not found. Run pnpm install in the monorepo.');process.exit(0)}try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:'lib/openclaw',stdio:'ignore'})}catch(e){}}\""
           }
         ]
       }
