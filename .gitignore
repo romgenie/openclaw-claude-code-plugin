@@ -3,3 +3,7 @@ lib/
 .DS_Store
 Thumbs.db
 *.log
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+bin/create-pr.sh
+bin/create-all-prs.sh
