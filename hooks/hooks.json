@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node bin/format-hook.js"
+            "command": "node bin/format-hook.cjs"
           }
         ]
       }

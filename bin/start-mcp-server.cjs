@@ -1,10 +1,10 @@
 const { spawn } = require("child_process");
 const pathModule = require("path");
-const { path, found } = require("./detect-monorepo");
+const { path, found } = require("./detect-monorepo.cjs");
 
 if (!found) {
   console.error(
-    `[openclaw] Monorepo not found at ${path} — MCP server disabled (standalone mode)`
+    `[openclaw] Monorepo not found at ${pathModule.resolve(path)} — MCP server disabled (standalone mode)`
   );
   process.exit(0);
 }
