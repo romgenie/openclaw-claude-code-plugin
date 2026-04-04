@@ -8,6 +8,7 @@
     "deny": []
   },
   "env": {
+    "OPENCLAW_REPO_PATH": "lib/openclaw",
     "NODE_OPTIONS": "--max-old-space-size=4096"
   }
 }

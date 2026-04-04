@@ -40,5 +40,7 @@ Scaffold or validate an OpenClaw plugin named `$ARGUMENTS.plugin_name`.
 
 ## Reference
 
-See `lib/openclaw/docs/plugins/building-plugins.md` for the full guide.
-See `lib/openclaw/extensions/` for 100+ examples of existing plugins.
+The monorepo path is configurable via `OPENCLAW_REPO_PATH` (default: `lib/openclaw`).
+
+See `$OPENCLAW_REPO_PATH/docs/plugins/building-plugins.md` for the full guide.
+See `$OPENCLAW_REPO_PATH/extensions/` for 100+ examples of existing plugins.

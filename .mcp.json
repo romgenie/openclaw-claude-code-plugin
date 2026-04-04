@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "openclaw-dev": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-filesystem", "lib/openclaw/src", "lib/openclaw/extensions", "lib/openclaw/docs"],
+      "command": "node",
+      "args": ["-e", "const{spawn}=require('child_process');const r=process.env.OPENCLAW_REPO_PATH||'lib/openclaw';const c=spawn('npx',['-y','@anthropic-ai/mcp-server-filesystem',r+'/src',r+'/extensions',r+'/docs'],{stdio:'inherit',shell:true});c.on('close',code=>process.exit(code||0))"],
       "env": {}
     }
   }

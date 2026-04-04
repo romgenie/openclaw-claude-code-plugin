@@ -37,6 +37,10 @@ This is a Claude Code plugin for developing and working with the OpenClaw platfo
 - Group related changes, no unrelated refactors bundled
 - Use `scripts/committer "<msg>" <file...>` when in the monorepo
 
+## Configuration
+
+- **`OPENCLAW_REPO_PATH`** — Path to the OpenClaw monorepo (default: `lib/openclaw`). Set this in your environment or in `.claude/settings.local.json` under `env` if the monorepo is cloned elsewhere.
+
 ## Verification Gates
 
 - **Dev loop**: `pnpm check`

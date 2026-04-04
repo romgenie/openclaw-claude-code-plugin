@@ -9,20 +9,22 @@ arguments:
 
 # Explore OpenClaw Plugin SDK
 
+The monorepo path is configurable via `OPENCLAW_REPO_PATH` (default: `lib/openclaw`).
+
 Search the OpenClaw Plugin SDK to find the right imports, types, and registration methods.
 
 ## Steps
 
-1. Search `lib/openclaw/src/plugin-sdk/` for files matching the query.
+1. Search `$OPENCLAW_REPO_PATH/src/plugin-sdk/` for files matching the query.
 
-2. Search `lib/openclaw/docs/plugins/sdk-overview.md` for the relevant subpath documentation.
+2. Search `$OPENCLAW_REPO_PATH/docs/plugins/sdk-overview.md` for the relevant subpath documentation.
 
 3. If looking for a registration method, check:
-   - `lib/openclaw/docs/plugins/building-plugins.md` for usage examples
-   - `lib/openclaw/docs/plugins/architecture.md` for capability model context
-   - `lib/openclaw/docs/plugins/sdk-entrypoints.md` for entry point patterns
+   - `$OPENCLAW_REPO_PATH/docs/plugins/building-plugins.md` for usage examples
+   - `$OPENCLAW_REPO_PATH/docs/plugins/architecture.md` for capability model context
+   - `$OPENCLAW_REPO_PATH/docs/plugins/sdk-entrypoints.md` for entry point patterns
 
-4. If looking for an existing implementation, search `lib/openclaw/extensions/` for real-world usage.
+4. If looking for an existing implementation, search `$OPENCLAW_REPO_PATH/extensions/` for real-world usage.
 
 5. Report the correct import path, type signature, and a usage example.
 

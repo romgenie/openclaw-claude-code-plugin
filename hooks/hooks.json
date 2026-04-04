@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const{execSync}=require('child_process');const f=process.env.CLAUDE_FILE_PATH||'';if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:'lib/openclaw',stdio:'ignore'})}catch(e){}}\""
+            "command": "node -e \"const{execSync}=require('child_process');const p=require('path');const f=process.env.CLAUDE_FILE_PATH||'';const r=process.env.OPENCLAW_REPO_PATH||'lib/openclaw';if(f.endsWith('.ts')||f.endsWith('.tsx')){try{execSync('npx oxfmt --write '+JSON.stringify(f),{cwd:r,stdio:'ignore'})}catch(e){}}\""
           }
         ]
       }

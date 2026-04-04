@@ -9,7 +9,7 @@ Run the standard OpenClaw dev verification gate.
 
 ## Steps
 
-1. Navigate to the OpenClaw monorepo root.
+1. Navigate to the OpenClaw monorepo root (`OPENCLAW_REPO_PATH`, default: `lib/openclaw`).
 2. Run `pnpm check` — this runs Oxlint and Oxfmt together.
 3. If failures occur, analyze the output and suggest fixes.
 4. If formatting issues are found, suggest running `pnpm format:fix` to auto-fix.
