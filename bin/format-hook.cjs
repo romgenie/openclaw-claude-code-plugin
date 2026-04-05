@@ -10,12 +10,11 @@ const file = process.env.CLAUDE_FILE_PATH
   : "";
 
 if (file && (file.endsWith(".ts") || file.endsWith(".tsx"))) {
-  const localBin = pathModule.join(path, "node_modules", ".bin", "oxfmt");
-  const hasLocal = fs.existsSync(localBin) || fs.existsSync(localBin + ".cmd");
+  const localBinPath = pathModule.join(path, "node_modules", ".bin", "oxfmt");
+  const bin = process.platform === "win32" ? localBinPath + ".cmd" : localBinPath;
 
   try {
-    if (hasLocal) {
-      const bin = process.platform === "win32" ? localBin + ".cmd" : localBin;
+    if (fs.existsSync(bin)) {
       execFileSync(bin, ["--write", "--", file], {
         cwd: path,
         stdio: "ignore",
