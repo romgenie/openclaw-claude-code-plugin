@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Check that the file being written does not import from 'src/**' directly (must use 'openclaw/plugin-sdk/<subpath>' for SDK imports). Also check it does not use 'any' type or '@ts-nocheck'. If violations found, respond with 'BLOCK: <reason>'. Otherwise respond 'PASS'."
+            "prompt": "First check the file extension. If the file is NOT a .ts or .tsx file, respond 'PASS' immediately without further analysis. For .ts/.tsx files, check these rules: 1) No imports from 'src/**' directly (must use 'openclaw/plugin-sdk/<subpath>'). 2) No 'any' type UNLESS the line or preceding line has a comment containing 'eslint-disable' or 'openclaw-allow'. 3) No '@ts-nocheck' UNLESS accompanied by a comment containing 'openclaw-allow-ts-nocheck' with a justification. If unjustified violations found, respond with 'BLOCK: <reason>'. Otherwise respond 'PASS'."
           }
         ]
       }

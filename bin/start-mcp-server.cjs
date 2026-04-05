@@ -9,7 +9,7 @@ if (!found) {
   );
   process.exit(0);
 }
-const dirs = ["src", "extensions", "docs"]
+const dirs = ["src/plugin-sdk", "extensions", "docs/plugins"]
   .map((d) => pathModule.join(path, d))
   .filter((d) => fs.existsSync(d));
 
