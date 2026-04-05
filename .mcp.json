@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "openclaw-dev": {
-      "command": "node",
-      "args": ["bin/start-mcp-server.cjs"],
-      "env": {}
-    }
-  }
-}
