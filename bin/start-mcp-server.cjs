@@ -1,4 +1,5 @@
 const { spawn } = require("child_process");
+const fs = require("fs");
 const pathModule = require("path");
 const { path, found } = require("./detect-monorepo.cjs");
 
@@ -8,8 +9,6 @@ if (!found) {
   );
   process.exit(0);
 }
-
-const fs = require("fs");
 const dirs = ["src", "extensions", "docs"]
   .map((d) => pathModule.join(path, d))
   .filter((d) => fs.existsSync(d));

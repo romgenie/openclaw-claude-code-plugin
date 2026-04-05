@@ -3,10 +3,7 @@ const fs = require("fs");
 const pathModule = require("path");
 const { path, found } = require("./detect-monorepo.cjs");
 
-if (!found) {
-  console.error("[openclaw] Monorepo not found — skipping format hook (standalone mode)");
-  process.exit(0);
-}
+if (!found) process.exit(0);
 
 const file = process.env.CLAUDE_FILE_PATH
   ? pathModule.resolve(process.env.CLAUDE_FILE_PATH)
