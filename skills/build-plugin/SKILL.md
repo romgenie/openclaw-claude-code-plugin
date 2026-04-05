@@ -31,7 +31,6 @@ Scaffold or validate an OpenClaw plugin named `$ARGUMENTS.plugin_name`.
    - All imports use `openclaw/plugin-sdk/<subpath>` (never `src/**`)
    - `configSchema` is valid JSON Schema
    - Plugin ID matches across manifest, folder name, and entry point
-   - No `workspace:*` in `dependencies`
    - Entry point exports a default from `definePluginEntry` or `defineChannelPluginEntry`
 
 4. **Test setup** — Create a colocated `index.test.ts` using Vitest.

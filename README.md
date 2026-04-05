@@ -5,7 +5,6 @@ Claude Code plugin for developing and working with the OpenClaw platform.
 ## Requirements
 
 - **Claude Code** 2.1.0 or later
-- **Node.js** 18+
 
 ## Installation
 

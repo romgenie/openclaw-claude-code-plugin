@@ -1,7 +1,6 @@
 # OpenClaw Plugin SDK — Quick Reference
 
-This is a bundled subset of the OpenClaw Plugin SDK documentation, shipped with the plugin
-so that skills work without requiring the full monorepo.
+Bundled Plugin SDK reference documentation for use by skills and Claude Code.
 
 ## Import Convention
 
@@ -87,9 +86,7 @@ export default defineChannelPluginEntry({
 ## Conventions
 
 - **TypeScript (ESM)**, strict typing, no `any`
-- **Node 22+**, pnpm for packages, Bun preferred for TS execution
-- **Formatting/Linting**: Oxlint and Oxfmt (`pnpm check`, `pnpm format`)
-- **Testing**: Vitest with V8 coverage (70% threshold), colocated `*.test.ts`
+- **Imports**: Always use `openclaw/plugin-sdk/<subpath>` — never import from `src/**`
+- **Testing**: Vitest, colocated `*.test.ts` files
 - **File size**: under ~700 LOC, split when it aids clarity
-- **Dependencies**: plugin deps in extension `package.json`, not root; `workspace:*` only in devDependencies/peerDependencies
 - **Naming**: "OpenClaw" in docs, `openclaw` in code/config
